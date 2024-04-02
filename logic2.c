@@ -58,17 +58,13 @@ void simulateGate(int choice) {
     switch(choice) {
         case 1:
         case 2:
+        case 3:
         case 4:
         case 5:
             printf("Enter first input (0 or 1): ");
             scanf("%d", &input1);
             printf("Enter second input (0 or 1): ");
             scanf("%d", &input2);
-            break;
-        case 3:
-            printf("Enter input (0 or 1): ");
-            scanf("%d", &input1);
-            break;
         default:
             printf("Invalid choice.\n");
             return; // Exit the function
