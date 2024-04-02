@@ -93,7 +93,7 @@ void simulateGate(int choice) {
 
     printf("Result: %d\n", result);
 }
-
+//Function calling
 void printTruthTable(int choice) {
     printf("\nTruth Table\n");
 
