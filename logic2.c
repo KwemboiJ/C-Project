@@ -41,6 +41,30 @@ void generateTruthTable(int (*logicFunc)(int, int), char *gateName, int inputA, 
         }
     }
 }
+case 4:
+            // Prompt user for inputs A and B for NOR gate
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Enter input value for B (0 or 1): ");
+            scanf("%d", &inputB);
+            printf("Output: %d\n", NOR(inputA, inputB));
+            generateTruthTable(NOR, "NOR", inputA, inputB);
+            break;
+        case 5:
+            // Prompt user for inputs A and B for NAND gate
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Enter input value for B (0 or 1): ");
+            scanf("%d", &inputB);
+            printf("Output: %d\n", NAND(inputA, inputB));
+            generateTruthTable(NAND, "NAND", inputA, inputB);
+            break;
+        default:
+            printf("Invalid choice!\n");
+            break;
+    }
 
+    return 0;
+}
 
   
