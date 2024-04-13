@@ -4,7 +4,7 @@
 /*OLWASI LINDA ENE212-0146/2021
     JOSHUA KWEMBOI ENE212-0088/2021
     FEDLEY SIKOLIA ENE212-0183/2021
-    SOSPETER NG'ANG'A
+    SOSPETER NG'ANG'A ENE212-0061/2021
     BRIAN OMARIBA  ENE212-0162/2021*/
 
 #define TRUE 1
@@ -65,6 +65,37 @@ int main() {
     printf("Enter your choice: ");
     scanf("%d", &choice);
     
+    // Process user choice
+    switch (choice) {
+        case 1:
+            // Prompt user for inputs A and B for AND gate
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Enter input value for B (0 or 1): ");
+            scanf("%d", &inputB);
+            printf("Output: %d\n", AND(inputA, inputB));
+            generateTruthTable(AND, "AND", inputA, inputB);
+            break;
+        case 2:
+            // Prompt user for inputs A and B for OR gate
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Enter input value for B (0 or 1): ");
+            scanf("%d", &inputB);
+            printf("Output: %d\n", OR(inputA, inputB));
+            generateTruthTable(OR, "OR", inputA, inputB);
+            break;
+        case 3:
+            // Prompt user for input A for NOT gate
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Output: %d\n", NOT(inputA));
+            printf("Truth table for NOT gate:\n");
+            printf("Input | Output\n");
+            printf("------+--------\n");
+            printf("   %d  |   %d\n", 0, NOT(0));
+            printf("   %d  |   %d\n", 1, NOT(1));
+            break;
        case 4:
             printf("Enter input value for A (0 or 1): ");
             scanf("%d", &inputA);
