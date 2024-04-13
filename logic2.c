@@ -28,6 +28,13 @@ int NOR(int a, int b) {
 int NAND(int a, int b) {
     return !(a && b);
 }
+int XOR(int a, int b){
+    return (a^b);
+}
+
+int XNOR(int a, int b){
+    return !(a^b);
+}
 
 // Function to generate truth table for a given logic function
 void generateTruthTable(int (*logicFunc)(int, int), char *gateName, int inputA, int inputB) {
@@ -41,6 +48,22 @@ void generateTruthTable(int (*logicFunc)(int, int), char *gateName, int inputA, 
         }
     }
 }
+
+int main() {
+    int choice, inputA, inputB;
+
+    // Prompt user to select gate
+    printf("Select gate:\n");
+    printf("1. AND\n");
+    printf("2. OR\n");
+    printf("3. NOT\n");
+    printf("4. NOR\n");
+    printf("5. NAND\n");
+    printf("6. XOR\n");
+    printf("7. XNOR\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    
 case 4:
             // Prompt user for inputs A and B for NOR gate
             printf("Enter input value for A (0 or 1): ");
@@ -59,10 +82,27 @@ case 4:
             printf("Output: %d\n", NAND(inputA, inputB));
             generateTruthTable(NAND, "NAND", inputA, inputB);
             break;
-        default:
+        case 6:
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Enter input value for B (0 or 1): ");
+            scanf("%d", &inputB);
+            printf("Output: %d\n", XOR(inputA, inputB));
+            generateTruthTable(XOR, "XOR", inputA, inputB);
+            break;
+        case 7:
+            printf("Enter input value for A (0 or 1): ");
+            scanf("%d", &inputA);
+            printf("Enter input value for B (0 or 1): ");
+            scanf("%d", &inputB);
+            printf("Output: %d\n", XOR(inputA, inputB));
+            generateTruthTable(XNOR, "XNOR", inputA, inputB);
+            break;
+    
+            default:
             printf("Invalid choice!\n");
             break;
-    }
+}
 
     return 0;
 }
